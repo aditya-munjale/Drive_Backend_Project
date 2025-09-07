@@ -20,3 +20,10 @@
   - Password int the form of Hash using bcrypt
   - npm i bcrypt
 
+ 
+
+ - Creating Login page
+   - npm i jsonwebtoken
+   - cookies used to save token
+   - npm i cooki-parser
+   - on the basis of token we get to know that user is loggened or not 
