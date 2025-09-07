@@ -27,3 +27,9 @@
    - cookies used to save token
    - npm i cooki-parser
    - on the basis of token we get to know that user is loggened or not 
+
+
+
+- Added tailwindcss & flowbit via CDN links
+
+  - flowbit.com->getting started->quick start
