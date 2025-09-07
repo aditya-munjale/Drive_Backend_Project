@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { body, validationResult } = require("express-validator");
+const userModel = require("../models/user.model");
 
 router.get("/register", (req, res) => {
   res.render("register");
@@ -13,7 +14,7 @@ router.post(
   body("password").trim().isLength({ min: 5 }),
   body("username").trim().isLength({ min: 3 }),
 
-  (req, res) => {
+  async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -23,7 +24,15 @@ router.post(
       });
     }
 
-    res.send(errors);
+    const { email, password, username } = req.body;
+
+    const newUser = await userModel.create({
+      email,
+      password,
+      username,
+    });
+
+    res.json(newUser);
   }
 );
 
