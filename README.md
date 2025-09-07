@@ -33,3 +33,4 @@
 - Added tailwindcss & flowbit via CDN links
 
   - flowbit.com->getting started->quick start
+  - remix icon
